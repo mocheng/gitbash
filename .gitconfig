@@ -1,0 +1,37 @@
+[user]
+  name = Morgan Cheng
+  email = morgan.chengmo@gmail.com
+
+[alias]
+  dt = difftool
+  df = diff
+  ci = commit
+  st = status
+  co = checkout
+  br = branch
+  gu = checkout --
+  gr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  gr2 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+  last = log -1 HEAD
+  unstage = reset HEAD --
+  pr = fetch --all --prune
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = No
+[mergetool]
+  keepBackup = true
+[core]
+  editor = /usr/bin/vim
+  excludesfile = /Users/chengmo/.gitignore_global
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[push]
+  default = current
